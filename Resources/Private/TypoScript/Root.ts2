@@ -1,5 +1,1 @@
-namespace: Neos=TYPO3.Neos
-namespace: TypoScript=TYPO3.TypoScript
-namespace: NamingConvention=Dotpulse.NamingConvention
-
 include: MetaTags/*

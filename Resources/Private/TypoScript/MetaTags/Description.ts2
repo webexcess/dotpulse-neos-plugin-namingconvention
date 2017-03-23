@@ -7,28 +7,24 @@
 # - %title%
 # - %override%
 
-prototype(Neos:Page) {
-	head {
-
-		@context.descriptionContent = TypoScript:Case {
-			hasDescription {
-				condition = ${q(node).property('metaDescription')}
-				renderer =  ${q(node).property('metaDescription')}
-			}
-
-			hasInherit {
-				condition = ${!String.isBlank(q(node).parents('[descriptionInherit]').property('descriptionInherit'))}
-				renderer = ${String.replace(String.replace(String.replace(q(node).parents('[descriptionInherit]').first().property('descriptionInherit'), '%title%', q(node).property('title')), '%override%', q(node).property('titleOverride') ? q(node).property('titleOverride') : q(node).property('title')), '%site%', site.context.currentSite.name)}
-			}
+prototype(TYPO3.Neos:Page).head {
+	@context.descriptionContent = TYPO3.TypoScript:Case {
+		hasDescription {
+			condition = ${q(node).property('metaDescription')}
+			renderer =  ${q(node).property('metaDescription')}
 		}
-
-		metaDescriptionTag = TypoScript:Tag {
-			tagName = 'meta'
-			attributes {
-				name = 'description'
-				content = ${String.pregReplace(String.pregReplace(descriptionContent, '/\n/' , ' '),'/ +/' , ' ')}
-			}
-			@if.isNotBlank = ${!String.isBlank(descriptionContent)}
+		hasInherit {
+			condition = ${!String.isBlank(q(node).parents('[descriptionInherit]').property('descriptionInherit'))}
+			renderer = ${String.replace(String.replace(String.replace(q(node).parents('[descriptionInherit]').first().property('descriptionInherit'), '%title%', q(node).property('title')), '%override%', q(node).property('titleOverride') ? q(node).property('titleOverride') : q(node).property('title')), '%site%', site.context.currentSite.name)}
 		}
+	}
+
+	metaDescriptionTag = TYPO3.TypoScript:Tag {
+		tagName = 'meta'
+		attributes {
+			name = 'description'
+			content = ${String.pregReplace(String.pregReplace(descriptionContent, '/\n/' , ' '),'/ +/' , ' ')}
+		}
+		@if.isNotBlank = ${!String.isBlank(descriptionContent)}
 	}
 }
