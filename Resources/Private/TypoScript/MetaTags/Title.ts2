@@ -1,0 +1,76 @@
+# Seite
+# - titleOverride
+# - titleInherit
+# - title
+
+# Pfad
+# - showPathTitle
+
+# Seiten im Pfad
+# - showInPathTitle
+# - useOverrideInPath
+
+# Variabeln
+# - %site%
+# - %title%
+
+prototype(Dotpulse.NamingConvention:Collection) < prototype(TypoScript:Collection) {
+
+	collection = ${q(documentNode).get()}
+
+	itemName = 'node'
+	iterationName = 'iterator'
+
+	// Implode node titles with the divider
+	itemRenderer = TypoScript:Array {
+		page = TypoScript:Case {
+			hasOverrideAndLast {
+				condition = ${q(node).property('titleOverride') && iterator.isLast}
+				renderer =  ${q(node).property('titleOverride')}
+			}
+			hasOverrideAndUseInPath {
+				condition = ${q(node).property('titleOverride') && q(node).property('useOverrideInPath')}
+				renderer =  ${q(node).property('titleOverride')}
+			}
+			hasInherit {
+				condition = ${!String.isBlank(q(node).parents('[titleInherit!=""]').property('titleInherit'))}
+				renderer = TypoScript:Case {
+					isLastOrIsNotTheSame {
+						condition = ${iterator.isLast || q(node).parents('[titleInherit!=""]').get(0) != q(node).children().filter('[instanceof TYPO3.Neos:Document]').parents('[titleInherit!=""]').get(0)}
+						renderer =  ${String.replace(String.replace(q(node).parents('[titleInherit!=""]').first().property('titleInherit'), '%title%', q(node).property('title')), '%site%', site.context.currentSite.name)}
+					}
+					default {
+						condition = ${true}
+						renderer =  ${q(node).property('title')}
+					}
+				}
+			}
+			default {
+				condition = ${true}
+				renderer =  ${String.replace(q(node).property('title'), '&shy;', '')}
+			}
+		}
+		pageDivider = ${iterator.isLast ? '' : settings.dividerPage}
+	}
+	@process.siteName = ${(settings.positionSite == 'START' ? site.context.currentSite.name + (value ? settings.dividerSite : '' ) : '' ) + String.stripTags(value) + (settings.positionSite == 'END' ? (value ? settings.dividerSite : '') + site.context.currentSite.name : '')}
+}
+
+prototype(Neos:Page) {
+	head.titleTag {
+		// Read settings
+		@override.settings = ${Configuration.setting('Dotpulse.NamingConvention.Title')}
+
+		titleOnly = Dotpulse.NamingConvention:Collection
+		titleAsc = Dotpulse.NamingConvention:Collection {
+			// If "showPathTitle" is set, the rootline will returned, pages with "showInPathTitle=false" will be filtered
+			collection = ${q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document]').filter('[showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get()}
+		}
+		titleDesc = Dotpulse.NamingConvention:Collection {
+			collection = ${Array.reverse(q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document]').filter('[showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get())}
+		}
+
+		// Put everything together
+		content = ${String.pregReplace(String.pregReplace((node == site) && q(node).property('titleOverride') ? q(node).property('titleOverride') : settings.showPath ? settings.showPath == 'ASC' ? this.titleAsc : this.titleDesc : this.titleOnly, '/\n/' , ' '),'/ +/' , ' ')}
+
+	}
+}

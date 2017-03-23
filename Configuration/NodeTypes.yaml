@@ -1,0 +1,14 @@
+#
+# Add mixins
+#
+
+'TYPO3.Neos:Document':
+  superTypes:
+    'Dotpulse.NamingConvention:SettingsMixin': TRUE
+    'Dotpulse.NamingConvention:TitleOverrideMixin': TRUE
+    'Dotpulse.NamingConvention:DescriptionMixin': TRUE
+    'Dotpulse.NamingConvention:ShowPathTitleMixin': TRUE
+    'Dotpulse.NamingConvention:TitleInheritMixin': TRUE
+    'Dotpulse.NamingConvention:DescriptionInheritMixin': TRUE
+    'Dotpulse.NamingConvention:ShowInPathTitleMixin': TRUE
+    'Dotpulse.NamingConvention:UseOverrideInPathMixin': TRUE

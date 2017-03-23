@@ -1,0 +1,18 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Dotpulse.NamingConvention': TRUE
+
+    userInterface:
+      translation:
+        autoInclude:
+          'Dotpulse.NamingConvention': ['NodeTypes/*']
+
+Dotpulse:
+  NamingConvention:
+    Title:
+      dividerPage: ' - '
+      dividerSite: ' • '
+      positionSite: START # "START" / "END" / FALSE
+      showPath: ASC # ASC / DESC / FALSE

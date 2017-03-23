@@ -1,0 +1,4 @@
+namespace: Neos=TYPO3.Neos
+namespace: TypoScript=TYPO3.TypoScript
+
+include: MetaTags/*
