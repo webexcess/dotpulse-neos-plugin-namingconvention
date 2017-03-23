@@ -33,11 +33,11 @@ prototype(NamingConvention:Collection) < prototype(TypoScript:Collection) {
 				renderer =  ${q(node).property('titleOverride')}
 			}
 			hasInherit {
-				condition = ${!String.isBlank(q(node).parents('[titleInherit!=""]').property('titleInherit'))}
+				condition = ${!String.isBlank(q(node).parents('[titleInherit]').property('titleInherit'))}
 				renderer = TypoScript:Case {
 					isLastOrIsNotTheSame {
-						condition = ${iterator.isLast || q(node).parents('[titleInherit!=""]').get(0) != q(node).children().filter('[instanceof TYPO3.Neos:Document]').parents('[titleInherit!=""]').get(0)}
-						renderer =  ${String.replace(String.replace(q(node).parents('[titleInherit!=""]').first().property('titleInherit'), '%title%', q(node).property('title')), '%site%', site.context.currentSite.name)}
+						condition = ${iterator.isLast || q(node).parents('[titleInherit]').get(0) != q(node).children().filter('[instanceof TYPO3.Neos:Document]').parents('[titleInherit]').get(0)}
+						renderer =  ${String.replace(String.replace(q(node).parents('[titleInherit]').first().property('titleInherit'), '%title%', q(node).property('title')), '%site%', site.context.currentSite.name)}
 					}
 					default {
 						condition = ${true}
@@ -63,10 +63,10 @@ prototype(Neos:Page) {
 		titleOnly = NamingConvention:Collection
 		titleAsc = NamingConvention:Collection {
 			// If "showPathTitle" is set, the rootline will returned, pages with "showInPathTitle=false" will be filtered
-			collection = ${q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document]').filter('[showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get()}
+			collection = ${q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document][showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get()}
 		}
 		titleDesc = NamingConvention:Collection {
-			collection = ${Array.reverse(q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document]').filter('[showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get())}
+			collection = ${Array.reverse(q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document][showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get())}
 		}
 
 		// Put everything together

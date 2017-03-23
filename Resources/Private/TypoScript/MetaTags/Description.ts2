@@ -17,8 +17,8 @@ prototype(Neos:Page) {
 			}
 
 			hasInherit {
-				condition = ${!String.isBlank(q(node).parents('[descriptionInherit!=""]').property('descriptionInherit'))}
-				renderer = ${String.replace(String.replace(String.replace(q(node).parents('[descriptionInherit!=""]').first().property('descriptionInherit'), '%title%', q(node).property('title')), '%override%', q(node).property('titleOverride') ? q(node).property('titleOverride') : q(node).property('title')), '%site%', site.context.currentSite.name)}
+				condition = ${!String.isBlank(q(node).parents('[descriptionInherit]').property('descriptionInherit'))}
+				renderer = ${String.replace(String.replace(String.replace(q(node).parents('[descriptionInherit]').first().property('descriptionInherit'), '%title%', q(node).property('title')), '%override%', q(node).property('titleOverride') ? q(node).property('titleOverride') : q(node).property('title')), '%site%', site.context.currentSite.name)}
 			}
 		}
 
