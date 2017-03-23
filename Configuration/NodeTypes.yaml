@@ -4,19 +4,19 @@
 
 'TYPO3.Neos:Document':
   superTypes:
-    'Dotpulse.NamingConvention:SettingsMixin': TRUE
-    'Dotpulse.NamingConvention:TitleOverrideMixin': TRUE
-    'Dotpulse.NamingConvention:DescriptionMixin': TRUE
-    'Dotpulse.NamingConvention:ShowPathTitleMixin': TRUE
-    'Dotpulse.NamingConvention:TitleInheritMixin': TRUE
-    'Dotpulse.NamingConvention:DescriptionInheritMixin': TRUE
-    'Dotpulse.NamingConvention:ShowInPathTitleMixin': TRUE
-    'Dotpulse.NamingConvention:UseOverrideInPathMixin': TRUE
+    'Dotpulse.NamingConvention:SettingsMixin': true
+    'Dotpulse.NamingConvention:TitleOverrideMixin': true
+    'Dotpulse.NamingConvention:DescriptionMixin': true
+    'Dotpulse.NamingConvention:ShowPathTitleMixin': true
+    'Dotpulse.NamingConvention:TitleInheritMixin': true
+    'Dotpulse.NamingConvention:DescriptionInheritMixin': true
+    'Dotpulse.NamingConvention:ShowInPathTitleMixin': true
+    'Dotpulse.NamingConvention:UseOverrideInPathMixin': true
 
 'TYPO3.Neos:Shortcut':
   superTypes:
-    'Dotpulse.NamingConvention:DescriptionMixin': FALSE
-    'Dotpulse.NamingConvention:ShowPathTitleMixin': FALSE
+    'Dotpulse.NamingConvention:DescriptionMixin': false
+    'Dotpulse.NamingConvention:ShowPathTitleMixin': false
   properties:
     titleOverride:
       ui:

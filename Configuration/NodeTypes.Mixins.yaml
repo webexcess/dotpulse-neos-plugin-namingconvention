@@ -4,7 +4,7 @@
 # Naming Convention tab and groups
 #
 'Dotpulse.NamingConvention:SettingsMixin':
-  abstract: TRUE
+  abstract: true
   ui:
     inspector:
       tabs:
@@ -30,7 +30,7 @@
 # Title Override Mixin
 #
 'Dotpulse.NamingConvention:TitleOverrideMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     titleOverride:
       type: string
@@ -38,22 +38,22 @@
         label: i18n
         help:
           message: i18n
-        reloadPageIfChanged: FALSE
+        reloadPageIfChanged: false
         inspector:
           group: conventionpage
           position: 10
           editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
           editorOptions:
-            placeholder: 'max. 60 characters'
+            placeholder: 'max. 65 characters'
       validation:
         'TYPO3.Neos/Validation/StringLengthValidator':
-          maximum: 60
+          maximum: 65
 
 #
 # Description Mixin
 #
 'Dotpulse.NamingConvention:DescriptionMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     metaDescription:
       type: string
@@ -61,7 +61,7 @@
         label: i18n
         help:
           message: i18n
-        reloadPageIfChanged: FALSE
+        reloadPageIfChanged: false
         inspector:
           group: conventionpage
           position: 20
@@ -76,14 +76,14 @@
 # Show Path Mixin
 #
 'Dotpulse.NamingConvention:ShowPathTitleMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     showPathTitle:
       type: boolean
-      defaultValue: TRUE
+      defaultValue: true
       ui:
         label: i18n
-        reloadPageIfChanged: FALSE
+        reloadPageIfChanged: false
         inspector:
           group: conventionpage
           position: 30
@@ -92,7 +92,7 @@
 # Inherit Title Mixin
 #
 'Dotpulse.NamingConvention:TitleInheritMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     titleInherit:
       type: string
@@ -100,7 +100,7 @@
         label: i18n
         help:
           message: i18n
-        reloadPageIfChanged: FALSE
+        reloadPageIfChanged: false
         inspector:
           group: conventioninherit
           position: 10
@@ -115,7 +115,7 @@
 # Inherit Description Mixin
 #
 'Dotpulse.NamingConvention:DescriptionInheritMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     descriptionInherit:
       type: string
@@ -123,7 +123,7 @@
         label: i18n
         help:
           message: i18n
-        reloadPageIfChanged: FALSE
+        reloadPageIfChanged: false
         inspector:
           group: conventioninherit
           position: 20
@@ -138,14 +138,14 @@
 # Show in Path Mixin
 #
 'Dotpulse.NamingConvention:ShowInPathTitleMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     showInPathTitle:
       type: boolean
-      defaultValue: TRUE
+      defaultValue: true
       ui:
         label: i18n
-        reloadPageIfChanged: FALSE
+        reloadPageIfChanged: false
         inspector:
           group: conventionpath
           position: 10
@@ -154,16 +154,16 @@
 # Use Override Mixin
 #
 'Dotpulse.NamingConvention:UseOverrideInPathMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     useOverrideInPath:
       type: boolean
-      defaultValue: TRUE
+      defaultValue: true
       ui:
         label: i18n
         help:
           message: i18n
-        reloadPageIfChanged: FALSE
+        reloadPageIfChanged: false
         inspector:
           group: conventionpath
           position: 20
