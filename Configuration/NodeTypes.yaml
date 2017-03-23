@@ -12,3 +12,13 @@
     'Dotpulse.NamingConvention:DescriptionInheritMixin': TRUE
     'Dotpulse.NamingConvention:ShowInPathTitleMixin': TRUE
     'Dotpulse.NamingConvention:UseOverrideInPathMixin': TRUE
+
+'TYPO3.Neos:Shortcut':
+  superTypes:
+    'Dotpulse.NamingConvention:DescriptionMixin': FALSE
+    'Dotpulse.NamingConvention:ShowPathTitleMixin': FALSE
+  properties:
+    titleOverride:
+      ui:
+        inspector:
+          group: conventionpath

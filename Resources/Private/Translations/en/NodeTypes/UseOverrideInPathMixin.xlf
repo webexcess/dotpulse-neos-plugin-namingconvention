@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Dotpulse.NamingConvention" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="properties.useOverrideInPath" xml:space="preserve">
+				<source>Use override value in title path</source>
+			</trans-unit>
+			<trans-unit id="properties.useOverrideInPath.ui.help.message" xml:space="preserve">
+				<source>If set, the value from «Override title» get's used for the breadcrumb in the title. If is no value is available, the normal title will be used.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

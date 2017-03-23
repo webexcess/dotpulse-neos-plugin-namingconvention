@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file original="" product-name="Dotpulse.NamingConvention" source-language="de" datatype="plaintext">
+	<file original="" product-name="Dotpulse.NamingConvention" source-language="en" datatype="plaintext">
 		<body>
 			<trans-unit id="properties.titleOverride" xml:space="preserve">
-				<source>Titel überschreiben</source>
+				<source>Override title</source>
 			</trans-unit>
 			<trans-unit id="properties.titleOverride.ui.help.message" xml:space="preserve">
-				<source><![CDATA[<ul><li>Wert überschreibt den Title-Tag.</li><li>Überschreibt den vererbten Wert.</li><li>Maximal 60 Zeichen.</li></ul>]]></source>
+				<source><![CDATA[<ul><li>Value override the title tag</li><li>Override inherited value.</li><li>Maximal 60 characters.</li></ul>]]></source>
 			</trans-unit>
 		</body>
 	</file>

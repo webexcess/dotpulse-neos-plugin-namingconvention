@@ -3,7 +3,10 @@
 	<file original="" product-name="Dotpulse.NamingConvention" source-language="de" datatype="plaintext">
 		<body>
 			<trans-unit id="properties.useOverrideInPath" xml:space="preserve">
-				<source>Override Wert im Titel-Pfad verwenden</source>
+				<source>Override im Titel-Pfad verwenden</source>
+			</trans-unit>
+			<trans-unit id="properties.useOverrideInPath.ui.help.message" xml:space="preserve">
+				<source>Falls gesetzt, wird der Wert vom Feld «Titel überschreiben» für den Pfad im Title Tag verwendet. Falls kein Wert verfügbar ist, wird der normale Seitentitel verwendet.</source>
 			</trans-unit>
 		</body>
 	</file>

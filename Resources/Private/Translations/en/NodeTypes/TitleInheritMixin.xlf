@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Dotpulse.NamingConvention" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="properties.titleInherit" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="properties.titleInherit.ui.help.message" xml:space="preserve">
+				<source><![CDATA[<ul><li>Value get inherited to subpages.</li><li>Maximal 60 characters.</li><li><b>%site%</b> will be replaced with the websites name.</li><li><b>%title%</b> will be replaced with the actual title of the site</li></ul>]]></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

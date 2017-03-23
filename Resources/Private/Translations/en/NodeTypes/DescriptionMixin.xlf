@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file original="" product-name="Dotpulse.NamingConvention" source-language="de" datatype="plaintext">
+	<file original="" product-name="Dotpulse.NamingConvention" source-language="en" datatype="plaintext">
 		<body>
 			<trans-unit id="properties.metaDescription" xml:space="preserve">
-				<source>Beschreibung</source>
+				<source>Description</source>
 			</trans-unit>
 			<trans-unit id="properties.metaDescription.ui.help.message" xml:space="preserve">
-				<source><![CDATA[<ul><li>Die Beschreibung wird bei Suchmaschinenresultaten angezeigt.</li><li>Überschreibt vererbten Wert.</li><li>Maximal 156 Zeichen.</li></ul>]]></source>
+				<source><![CDATA[<ul><li>The description will be shown on search engine results</li><li>Override inherited value.</li><li>Maximal 156 characters.</li></ul>]]></source>
 			</trans-unit>
 		</body>
 	</file>
