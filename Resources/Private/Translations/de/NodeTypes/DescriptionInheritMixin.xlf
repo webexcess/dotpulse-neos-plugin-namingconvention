@@ -6,7 +6,12 @@
 				<source>Beschreibung</source>
 			</trans-unit>
 			<trans-unit id="properties.descriptionInherit.ui.help.message" xml:space="preserve">
-				<source><![CDATA[<ul><li>Wert wird auf Unterseiten vererbt.</li><li>Die Beschreibung wird bei Suchmaschinenresultaten angezeigt.</li><li>Maximal 156 Zeichen.</li><li><b>%site%</b> wird durch den Namen der Webseite ersetzt</li><li><b>%title%</b> wird durch den aktuellen Seitentitel ersetzt.</li><li><b>%override%</b> wird durch den Wert, welcher bei «Titel überschreiben» eingefügt ist, ersetzt. Falls dieser nicht vorhanden ist, wird der Seitentitel verwendet</li></ul>]]></source>
+				<source>* Wert wird auf Unterseiten vererbt
+* Die Beschreibung wird bei Suchmaschinenresultaten angezeigt
+* Maximal 156 Zeichen
+* **%site%** wird durch den Namen der Webseite ersetzt
+* **%title%** wird durch den aktuellen Seitentitel ersetzt
+* **%override%** wird durch den Wert, welcher bei «Titel überschreiben» eingefügt ist, ersetzt. Falls dieser nicht vorhanden ist, wird der Seitentitel verwendet</source>
 			</trans-unit>
 		</body>
 	</file>

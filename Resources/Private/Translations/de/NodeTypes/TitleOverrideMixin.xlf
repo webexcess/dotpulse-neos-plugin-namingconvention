@@ -6,7 +6,9 @@
 				<source>Titel überschreiben</source>
 			</trans-unit>
 			<trans-unit id="properties.titleOverride.ui.help.message" xml:space="preserve">
-				<source><![CDATA[<ul><li>Wert überschreibt den Title-Tag.</li><li>Überschreibt den vererbten Wert.</li><li>Maximal 60 Zeichen.</li></ul>]]></source>
+				<source>* Wert überschreibt den Title-Tag
+* Überschreibt den vererbten Wert
+* Maximal 60 Zeichen</source>
 			</trans-unit>
 		</body>
 	</file>

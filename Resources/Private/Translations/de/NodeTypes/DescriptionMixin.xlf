@@ -6,7 +6,9 @@
 				<source>Beschreibung</source>
 			</trans-unit>
 			<trans-unit id="properties.metaDescription.ui.help.message" xml:space="preserve">
-				<source><![CDATA[<ul><li>Die Beschreibung wird bei Suchmaschinenresultaten angezeigt.</li><li>Überschreibt vererbten Wert.</li><li>Maximal 156 Zeichen.</li></ul>]]></source>
+				<source>* Die Beschreibung wird bei Suchmaschinenresultaten angezeigt
+* Überschreibt vererbten Wert
+* Maximal 156 Zeichen</source>
 			</trans-unit>
 		</body>
 	</file>

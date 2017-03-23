@@ -6,7 +6,9 @@
 				<source>Description</source>
 			</trans-unit>
 			<trans-unit id="properties.metaDescription.ui.help.message" xml:space="preserve">
-				<source><![CDATA[<ul><li>The description will be shown on search engine results</li><li>Override inherited value.</li><li>Maximal 156 characters.</li></ul>]]></source>
+				<source>* The description will be shown on search engine results
+* Override inherited value
+* Maximal 156 characters</source>
 			</trans-unit>
 		</body>
 	</file>

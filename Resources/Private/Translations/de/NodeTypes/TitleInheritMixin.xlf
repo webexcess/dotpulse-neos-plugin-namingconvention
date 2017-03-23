@@ -6,7 +6,10 @@
 				<source>Titel</source>
 			</trans-unit>
 			<trans-unit id="properties.titleInherit.ui.help.message" xml:space="preserve">
-				<source><![CDATA[<ul><li>Wert wird auf Unterseiten vererbt.</li><li>Maximal 60 Zeichen.</li><li><b>%site%</b> wird durch den Namen der Webseite ersetzt</li><li><b>%title%</b> wird durch den aktuellen Seitentitel ersetzt.</li></ul>]]></source>
+				<source>* Wert wird auf Unterseiten vererbt
+* Maximal 60 Zeichen
+* **%site%** wird durch den Namen der Webseite ersetzt
+* **%title%** wird durch den aktuellen Seitentitel ersetzt</source>
 			</trans-unit>
 		</body>
 	</file>

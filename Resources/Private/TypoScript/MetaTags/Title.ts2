@@ -58,19 +58,36 @@ prototype(NamingConvention:Collection) < prototype(TypoScript:Collection) {
 prototype(Neos:Page) {
 	head.titleTag {
 		// Read settings
-		@override.settings = ${Configuration.setting('Dotpulse.NamingConvention.Title')}
-
-		titleOnly = NamingConvention:Collection
-		titleAsc = NamingConvention:Collection {
-			// If "showPathTitle" is set, the rootline will returned, pages with "showInPathTitle=false" will be filtered
-			collection = ${q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document][showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get()}
+		@context.settings = ${Configuration.setting('Dotpulse.NamingConvention.Title')}
+		title = TypoScript:Case {
+			titleOverride {
+				condition = ${(node == site) && q(node).property('titleOverride') ? true : false}
+				renderer = ${q(node).property('titleOverride')}
+			}
+			showPath {
+				condition =${settings.showPath}
+				renderer = TypoScript:Case {
+					titleAsc {
+						condition = ${settings.showPath == 'asc'}
+						renderer = NamingConvention:Collection {
+							// If "showPathTitle" is set, the rootline will returned, pages with "showInPathTitle=false" will be filtered
+							collection = ${q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document][showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get()}
+						}
+					}
+					titleDesc {
+						condition = true
+						renderer = NamingConvention:Collection {
+							collection = ${Array.reverse(q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document][showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get())}
+						}
+					}
+				}
+			}
+			titleOnly {
+				condition = true
+				renderer = NamingConvention:Collection
+			}
 		}
-		titleDesc = NamingConvention:Collection {
-			collection = ${Array.reverse(q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document][showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get())}
-		}
-
 		// Put everything together
-		content = ${String.pregReplace(String.pregReplace((node == site) && q(node).property('titleOverride') ? q(node).property('titleOverride') : settings.showPath ? settings.showPath == 'asc' ? this.titleAsc : this.titleDesc : this.titleOnly, '/\n/' , ' '),'/ +/' , ' ')}
-
+		content = ${String.replace(String.pregReplace(String.pregReplace(this.title, '/\n/' , ' '),'/ +/' , ' '), ' ', ' ')}
 	}
 }

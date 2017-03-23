@@ -10,7 +10,7 @@
 prototype(Neos:Page) {
 	head {
 
-		@override.descriptionContent = TypoScript:Case {
+		@context.descriptionContent = TypoScript:Case {
 			hasDescription {
 				condition = ${q(node).property('metaDescription')}
 				renderer =  ${q(node).property('metaDescription')}

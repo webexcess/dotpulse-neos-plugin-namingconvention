@@ -6,7 +6,10 @@
 				<source>Title</source>
 			</trans-unit>
 			<trans-unit id="properties.titleInherit.ui.help.message" xml:space="preserve">
-				<source><![CDATA[<ul><li>Value get inherited to subpages.</li><li>Maximal 60 characters.</li><li><b>%site%</b> will be replaced with the websites name.</li><li><b>%title%</b> will be replaced with the actual title of the site</li></ul>]]></source>
+				<source>* Value get inherited to subpages
+* Maximal 60 characters
+* **%site%** will be replaced with the websites name
+* **%title%** will be replaced with the actual title of the site</source>
 			</trans-unit>
 		</body>
 	</file>

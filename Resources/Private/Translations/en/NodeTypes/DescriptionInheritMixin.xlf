@@ -6,7 +6,12 @@
 				<source>Description</source>
 			</trans-unit>
 			<trans-unit id="properties.descriptionInherit.ui.help.message" xml:space="preserve">
-				<source><![CDATA[<ul><li>Value get inherited to subpages</li><li>The description will be shown on search engine results</li><li>Maximal 156 characters.</li><li><b>%site%</b> will be replaced with the websites name.</li><li><b>%title%</b> will be replaced with the actual title of the site</li><li><b>%override%</b> will be replaced with the value, which is entred on «Title override». If this value is not present, the title will be used instead.</li></ul>]]></source>
+				<source>* Value get inherited to subpages
+* The description will be shown on search engine results
+* Maximal 156 characters
+* **%site%** will be replaced with the websites name
+* **%title%** will be replaced with the actual title of the site
+* **%override%** will be replaced with the value, which is entred on «Title override». If this value is not present, the title will be used instead</source>
 			</trans-unit>
 		</body>
 	</file>

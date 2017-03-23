@@ -6,7 +6,9 @@
 				<source>Override title</source>
 			</trans-unit>
 			<trans-unit id="properties.titleOverride.ui.help.message" xml:space="preserve">
-				<source><![CDATA[<ul><li>Value override the title tag</li><li>Override inherited value.</li><li>Maximal 60 characters.</li></ul>]]></source>
+				<source>* Value override the title tag
+* Override inherited value
+* Maximal 60 characters</source>
 			</trans-unit>
 		</body>
 	</file>
