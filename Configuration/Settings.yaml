@@ -14,5 +14,5 @@ Dotpulse:
     Title:
       dividerPage: ' - '
       dividerSite: ' • '
-      positionSite: START # "START" / "END" / FALSE
-      showPath: ASC # ASC / DESC / FALSE
+      positionSite: start # "start" / "end" / FALSE
+      showPath: asc # asc / desc / FALSE

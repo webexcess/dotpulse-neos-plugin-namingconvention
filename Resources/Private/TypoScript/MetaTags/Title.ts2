@@ -14,7 +14,7 @@
 # - %site%
 # - %title%
 
-prototype(Dotpulse.NamingConvention:Collection) < prototype(TypoScript:Collection) {
+prototype(NamingConvention:Collection) < prototype(TypoScript:Collection) {
 
 	collection = ${q(documentNode).get()}
 
@@ -52,7 +52,7 @@ prototype(Dotpulse.NamingConvention:Collection) < prototype(TypoScript:Collectio
 		}
 		pageDivider = ${iterator.isLast ? '' : settings.dividerPage}
 	}
-	@process.siteName = ${(settings.positionSite == 'START' ? site.context.currentSite.name + (value ? settings.dividerSite : '' ) : '' ) + String.stripTags(value) + (settings.positionSite == 'END' ? (value ? settings.dividerSite : '') + site.context.currentSite.name : '')}
+	@process.siteName = ${(settings.positionSite == 'start' ? site.context.currentSite.name + (value ? settings.dividerSite : '' ) : '' ) + String.stripTags(value) + (settings.positionSite == 'end' ? (value ? settings.dividerSite : '') + site.context.currentSite.name : '')}
 }
 
 prototype(Neos:Page) {
@@ -60,17 +60,17 @@ prototype(Neos:Page) {
 		// Read settings
 		@override.settings = ${Configuration.setting('Dotpulse.NamingConvention.Title')}
 
-		titleOnly = Dotpulse.NamingConvention:Collection
-		titleAsc = Dotpulse.NamingConvention:Collection {
+		titleOnly = NamingConvention:Collection
+		titleAsc = NamingConvention:Collection {
 			// If "showPathTitle" is set, the rootline will returned, pages with "showInPathTitle=false" will be filtered
 			collection = ${q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document]').filter('[showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get()}
 		}
-		titleDesc = Dotpulse.NamingConvention:Collection {
+		titleDesc = NamingConvention:Collection {
 			collection = ${Array.reverse(q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document]').filter('[showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get())}
 		}
 
 		// Put everything together
-		content = ${String.pregReplace(String.pregReplace((node == site) && q(node).property('titleOverride') ? q(node).property('titleOverride') : settings.showPath ? settings.showPath == 'ASC' ? this.titleAsc : this.titleDesc : this.titleOnly, '/\n/' , ' '),'/ +/' , ' ')}
+		content = ${String.pregReplace(String.pregReplace((node == site) && q(node).property('titleOverride') ? q(node).property('titleOverride') : settings.showPath ? settings.showPath == 'asc' ? this.titleAsc : this.titleDesc : this.titleOnly, '/\n/' , ' '),'/ +/' , ' ')}
 
 	}
 }
