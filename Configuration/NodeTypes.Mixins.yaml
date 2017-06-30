@@ -1,5 +1,5 @@
 # Reset titleOverride from the SEO Package
-'Neos.Neos.Seo:TitleTagMixin': []
+'Neos.Seo:TitleTagMixin': []
 #
 # Naming Convention tab and groups
 #
