@@ -7,7 +7,7 @@
 # - %title%
 # - %override%
 
-prototype(TYPO3.Neos:Page).head {
+prototype(Neos.Neos:Page).head {
 	@context.descriptionContent = Neos.Fusion:Case {
 		hasDescription {
 			condition = ${q(node).property('metaDescription')}

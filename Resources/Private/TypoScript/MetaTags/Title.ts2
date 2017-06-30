@@ -36,7 +36,7 @@ prototype(Dotpulse.NamingConvention:Collection) < prototype(Neos.Fusion:Collecti
 				condition = ${!String.isBlank(q(node).parents('[titleInherit]').property('titleInherit'))}
 				renderer = Neos.Fusion:Case {
 					isLastOrIsNotTheSame {
-						condition = ${iterator.isLast || q(node).parents('[titleInherit]').get(0) != q(node).children().filter('[instanceof TYPO3.Neos:Document]').parents('[titleInherit]').get(0)}
+						condition = ${iterator.isLast || q(node).parents('[titleInherit]').get(0) != q(node).children().filter('[instanceof Neos.Neos:Document]').parents('[titleInherit]').get(0)}
 						renderer =  ${String.replace(String.replace(q(node).parents('[titleInherit]').first().property('titleInherit'), '%title%', q(node).property('title')), '%site%', site.context.currentSite.name)}
 					}
 					default {
@@ -55,7 +55,7 @@ prototype(Dotpulse.NamingConvention:Collection) < prototype(Neos.Fusion:Collecti
 	@process.siteName = ${(settings.positionSite == 'start' ? site.context.currentSite.name + (value ? settings.dividerSite : '' ) : '' ) + String.stripTags(value) + (settings.positionSite == 'end' ? (value ? settings.dividerSite : '') + site.context.currentSite.name : '')}
 }
 
-prototype(TYPO3.Neos:Page).head.titleTag {
+prototype(Neos.Neos:Page).head.titleTag {
 	// Read settings
 	@context.settings = ${Configuration.setting('Dotpulse.NamingConvention.Title')}
 	title = Neos.Fusion:Case {
@@ -74,13 +74,13 @@ prototype(TYPO3.Neos:Page).head.titleTag {
 					condition = ${settings.showPath == 'asc'}
 					renderer = Dotpulse.NamingConvention:Collection {
 						// If "showPathTitle" is set, the rootline will returned, pages with "showInPathTitle=false" will be filtered
-						collection = ${q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document][showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get()}
+						collection = ${q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof Neos.Neos:Document][showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get()}
 					}
 				}
 				titleDesc {
 					condition = true
 					renderer = Dotpulse.NamingConvention:Collection {
-						collection = ${Array.reverse(q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof TYPO3.Neos:Document][showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get())}
+						collection = ${Array.reverse(q(documentNode).property('showPathTitle') ? q(documentNode).add(q(documentNode).parents('[instanceof Neos.Neos:Document][showInPathTitle=true]')).slice(0, -1).get() : q(documentNode).get())}
 					}
 				}
 			}
