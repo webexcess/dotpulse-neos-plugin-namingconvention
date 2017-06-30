@@ -8,11 +8,11 @@ Dotpulse:
       showPath: asc
 Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        Dotpulse.NamingConvention: true
     userInterface:
       translation:
         autoInclude:
           Dotpulse.NamingConvention:
             - 'NodeTypes/*'
+    fusion:
+      autoInclude:
+        Dotpulse.NamingConvention: true
