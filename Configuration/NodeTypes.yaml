@@ -2,7 +2,7 @@
 # Add mixins
 #
 
-'TYPO3.Neos:Document':
+'Neos.Neos:Document':
   superTypes:
     'Dotpulse.NamingConvention:SettingsMixin': true
     'Dotpulse.NamingConvention:TitleOverrideMixin': true
@@ -13,7 +13,7 @@
     'Dotpulse.NamingConvention:ShowInPathTitleMixin': true
     'Dotpulse.NamingConvention:UseOverrideInPathMixin': true
 
-'TYPO3.Neos:Shortcut':
+'Neos.Neos:Shortcut':
   superTypes:
     'Dotpulse.NamingConvention:DescriptionMixin': false
     'Dotpulse.NamingConvention:ShowPathTitleMixin': false

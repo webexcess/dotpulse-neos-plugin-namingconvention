@@ -1,5 +1,5 @@
 # Reset titleOverride from the SEO Package
-'TYPO3.Neos.Seo:TitleTagMixin': []
+'Neos.Neos.Seo:TitleTagMixin': []
 #
 # Naming Convention tab and groups
 #
@@ -42,11 +42,11 @@
         inspector:
           group: conventionpage
           position: 10
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
           editorOptions:
             placeholder: 'max. 65 characters'
       validation:
-        'TYPO3.Neos/Validation/StringLengthValidator':
+        'Neos.Neos/Validation/StringLengthValidator':
           maximum: 65
 
 #
@@ -65,11 +65,11 @@
         inspector:
           group: conventionpage
           position: 20
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
           editorOptions:
             placeholder: 'max. 156 characters'
       validation:
-        'TYPO3.Neos/Validation/StringLengthValidator':
+        'Neos.Neos/Validation/StringLengthValidator':
           maximum: 156
 
 #
@@ -104,11 +104,11 @@
         inspector:
           group: conventioninherit
           position: 10
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
           editorOptions:
             placeholder: 'max. 60 characters'
       validation:
-        'TYPO3.Neos/Validation/StringLengthValidator':
+        'Neos.Neos/Validation/StringLengthValidator':
           maximum: 60
 
 #
@@ -127,11 +127,11 @@
         inspector:
           group: conventioninherit
           position: 20
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
           editorOptions:
             placeholder: 'max. 156 characters'
       validation:
-        'TYPO3.Neos/Validation/StringLengthValidator':
+        'Neos.Neos/Validation/StringLengthValidator':
           maximum: 156
 
 #
