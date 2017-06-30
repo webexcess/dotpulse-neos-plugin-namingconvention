@@ -8,7 +8,7 @@
 # - %override%
 
 prototype(TYPO3.Neos:Page).head {
-	@context.descriptionContent = TYPO3.TypoScript:Case {
+	@context.descriptionContent = Neos.Fusion:Case {
 		hasDescription {
 			condition = ${q(node).property('metaDescription')}
 			renderer =  ${q(node).property('metaDescription')}
@@ -19,7 +19,7 @@ prototype(TYPO3.Neos:Page).head {
 		}
 	}
 
-	metaDescriptionTag = TYPO3.TypoScript:Tag {
+	metaDescriptionTag = Neos.Fusion:Tag {
 		tagName = 'meta'
 		attributes {
 			name = 'description'

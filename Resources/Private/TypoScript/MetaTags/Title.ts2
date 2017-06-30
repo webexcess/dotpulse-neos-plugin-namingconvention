@@ -14,7 +14,7 @@
 # - %site%
 # - %title%
 
-prototype(Dotpulse.NamingConvention:Collection) < prototype(TYPO3.TypoScript:Collection) {
+prototype(Dotpulse.NamingConvention:Collection) < prototype(Neos.Fusion:Collection) {
 
 	collection = ${q(documentNode).get()}
 
@@ -22,8 +22,8 @@ prototype(Dotpulse.NamingConvention:Collection) < prototype(TYPO3.TypoScript:Col
 	iterationName = 'iterator'
 
 	// Implode node titles with the divider
-	itemRenderer = TYPO3.TypoScript:Array {
-		page = TYPO3.TypoScript:Case {
+	itemRenderer = Neos.Fusion:Array {
+		page = Neos.Fusion:Case {
 			hasOverrideAndLast {
 				condition = ${q(node).property('titleOverride') && iterator.isLast}
 				renderer =  ${q(node).property('titleOverride')}
@@ -34,7 +34,7 @@ prototype(Dotpulse.NamingConvention:Collection) < prototype(TYPO3.TypoScript:Col
 			}
 			hasInherit {
 				condition = ${!String.isBlank(q(node).parents('[titleInherit]').property('titleInherit'))}
-				renderer = TYPO3.TypoScript:Case {
+				renderer = Neos.Fusion:Case {
 					isLastOrIsNotTheSame {
 						condition = ${iterator.isLast || q(node).parents('[titleInherit]').get(0) != q(node).children().filter('[instanceof TYPO3.Neos:Document]').parents('[titleInherit]').get(0)}
 						renderer =  ${String.replace(String.replace(q(node).parents('[titleInherit]').first().property('titleInherit'), '%title%', q(node).property('title')), '%site%', site.context.currentSite.name)}
@@ -58,7 +58,7 @@ prototype(Dotpulse.NamingConvention:Collection) < prototype(TYPO3.TypoScript:Col
 prototype(TYPO3.Neos:Page).head.titleTag {
 	// Read settings
 	@context.settings = ${Configuration.setting('Dotpulse.NamingConvention.Title')}
-	title = TYPO3.TypoScript:Case {
+	title = Neos.Fusion:Case {
 		titleOverride {
 			condition = ${(node == site) && q(node).property('titleOverride') ? true : false}
 			renderer = ${q(node).property('titleOverride')}
@@ -69,7 +69,7 @@ prototype(TYPO3.Neos:Page).head.titleTag {
 		}
 		showPath {
 			condition =${settings.showPath}
-			renderer = TYPO3.TypoScript:Case {
+			renderer = Neos.Fusion:Case {
 				titleAsc {
 					condition = ${settings.showPath == 'asc'}
 					renderer = Dotpulse.NamingConvention:Collection {
